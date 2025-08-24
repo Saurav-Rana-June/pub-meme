@@ -74,7 +74,7 @@ class CustomPrimaryButton extends StatelessWidget {
                       text,
                       style:
                           textStyle ??
-                          regular16pt.copyWith(
+                          r16.copyWith(
                             fontWeight: FontWeight.w600,
                             color: textColor ?? Colors.white,
                           ),

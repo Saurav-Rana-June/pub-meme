@@ -71,13 +71,13 @@ class CustomOutlineButton extends StatelessWidget {
                   children: [
                     if (prefixIcon != null) ...[
                       prefixIcon!,
-                      const SizedBox(width: 8),
+                      const SizedBox(width: 10),
                     ],
                     Text(
                       text,
                       style:
                           textStyle ??
-                          regular14pt.copyWith(
+                          r14.copyWith(
                             fontWeight: FontWeight.w500,
                             color:
                                 textColor ??

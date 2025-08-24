@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
-
 import 'package:get/get.dart';
 import 'package:pub_meme/data/enums/spacing_enum.dart';
 import 'package:pub_meme/data/extensions/spacing_extension.dart';
+import 'package:pub_meme/infrastructure/navigation/routes.dart';
 import 'package:pub_meme/infrastructure/theme/theme.dart';
 import 'package:pub_meme/widgets/buttons/custom_outline_button.widget.dart';
 import 'package:pub_meme/widgets/buttons/custom_primary_button.widget.dart';
 import 'package:pub_meme/widgets/form_fields/custom_textfield.widget.dart';
-
 import 'controllers/login.controller.dart';
 
 class LoginScreen extends GetView<LoginController> {
@@ -153,8 +152,10 @@ class LoginScreen extends GetView<LoginController> {
               text: "Login",
               borderRadius: 12,
               height: 35,
-              backgroundColor: secondaryColor,
-              onPressed: () {},
+              backgroundColor: primary,
+              onPressed: () {
+                Get.toNamed(Routes.LANDING);
+              },
             ),
             Spacing.s32.h,
 
@@ -162,13 +163,14 @@ class LoginScreen extends GetView<LoginController> {
               text: "Continue with Google",
               height: 45,
               borderRadius: 15,
+              borderWidth: .8,
               prefixIcon: Container(
                 width: 20,
                 height: 20,
                 child: Image.asset('assets/logo/google_logo.png'),
               ),
-              borderColor: Theme.of(context).dividerColor,
-              textColor: Theme.of(context).dividerColor,
+              borderColor:
+                  Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
               onPressed: () {},
             ),
             Spacing.s12.h,
@@ -176,13 +178,14 @@ class LoginScreen extends GetView<LoginController> {
               text: "Continue as a Guest",
               height: 45,
               borderRadius: 15,
+              borderWidth: .8,
               prefixIcon: Container(
                 width: 20,
                 height: 20,
                 child: Image.asset('assets/logo/guest_logo.png'),
               ),
-              borderColor: Theme.of(context).dividerColor,
-              textColor: Theme.of(context).dividerColor,
+              borderColor:
+                  Theme.of(context).textTheme.bodyLarge?.color ?? Colors.black,
               onPressed: () {},
             ),
           ],

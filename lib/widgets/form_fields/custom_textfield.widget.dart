@@ -56,7 +56,7 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-      style: regular14pt,
+      style: r14,
       initialValue: initialValue,
       obscureText: obscureText,
       keyboardType: keyboardType,
@@ -70,6 +70,9 @@ class CustomTextFormField extends StatelessWidget {
       maxLength: maxLength,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: r14.copyWith(
+          color: Theme.of(context).dividerColor,
+        ),
         labelText: labelText,
         prefixIcon: prefixIcon,
         suffixIcon: suffixIcon,
@@ -79,7 +82,9 @@ class CustomTextFormField extends StatelessWidget {
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
               borderSide: BorderSide(
-                color: Theme.of(context).dividerColor,
+                color:
+                    Theme.of(context).textTheme.bodyLarge?.color ??
+                    Colors.black,
                 width: .8,
               ),
             ),
@@ -87,10 +92,7 @@ class CustomTextFormField extends StatelessWidget {
             focusedBorder ??
             OutlineInputBorder(
               borderRadius: BorderRadius.circular(15),
-              borderSide: BorderSide(
-                color: Theme.of(context).dividerColor,
-                width: 1.5,
-              ),
+              borderSide: BorderSide(color: primary, width: 1),
             ),
         errorBorder:
             errorBorder ??

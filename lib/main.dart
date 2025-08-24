@@ -18,6 +18,7 @@ class Main extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      title: "PubMeme",
       initialRoute: initialRoute,
       getPages: Nav.routes,
       theme: AppTheme.lightTheme,

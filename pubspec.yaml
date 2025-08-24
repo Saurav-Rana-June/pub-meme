@@ -2,7 +2,7 @@ name: pub_meme
 description: "A new Flutter project."
 # The following line prevents the package from being accidentally published to
 # pub.dev using `flutter pub publish`. This is preferred for private packages.
-publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+publish_to: "none" # Remove this line if you wish to publish to pub.dev
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -35,6 +35,10 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   get: ^4.7.2
+  google_fonts: ^6.3.0
+  flutter_staggered_grid_view: ^0.7.0
+  flutter_svg: ^2.2.0
+  circle_nav_bar: ^2.2.0
 
 dev_dependencies:
   flutter_test:
@@ -52,7 +56,6 @@ dev_dependencies:
 
 # The following section is specific to Flutter packages.
 flutter:
-
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
@@ -62,6 +65,21 @@ flutter:
   assets:
     - assets/images/
     - assets/logo/
+    - assets/fonts/
+
+  fonts:
+    - family: FontAwesomeSolid
+      fonts:
+        - asset: assets/fonts/fa-solid-900.ttf
+    - family: FontAwesomeRegular
+      fonts:
+        - asset: assets/fonts/fa-regular-400.ttf
+    - family: FontAwesomeLight
+      fonts:
+        - asset: assets/fonts/fa-light-300.ttf
+    - family: FontAwesomeBrands
+      fonts:
+        - asset: assets/fonts/fa-brands-400.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/to/resolution-aware-images
