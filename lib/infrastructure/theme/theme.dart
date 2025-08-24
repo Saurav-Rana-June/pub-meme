@@ -5,7 +5,7 @@ Color white = const Color(0xFFFFFFFF);
 Color primary = Color(0xFF158CB7);
 Color secondary = Color(0xFFFDBD2A);
 
-Color scaffoldLight = Colors.white;
+Color scaffoldLight = Color(0xFFF5F5F5);
 Color scaffoldDark = Colors.black;
 
 Color regular = const Color(0xFF01080D);
