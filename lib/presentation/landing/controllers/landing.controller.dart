@@ -4,7 +4,7 @@ import 'package:pub_meme/presentation/screens.dart';
 class LandingController extends GetxController {
   RxInt currentIndex = 0.obs;
 
-  final screens = [HomeScreen(), HomeScreen(), HomeScreen(), HomeScreen()];
+  final screens = [HomeScreen(), HomeScreen(), HomeScreen(), ProfileScreen()];
 
   void toggleScreen(int index) {
     currentIndex.value = index;

@@ -41,5 +41,10 @@ class Nav {
       page: () => const LandingScreen(),
       binding: LandingControllerBinding(),
     ),
+    GetPage(
+      name: Routes.PROFILE,
+      page: () => const ProfileScreen(),
+      binding: ProfileControllerBinding(),
+    ),
   ];
 }

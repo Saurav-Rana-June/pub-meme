@@ -19,7 +19,7 @@ class LandingScreen extends GetView<LandingController> {
             color: Theme.of(context).scaffoldBackgroundColor,
             boxShadow: [
               BoxShadow(
-                color: regular50.withValues(alpha: 0.25),
+                color: Colors.black.withValues(alpha: 0.05),
                 blurRadius: 8,
                 offset: Offset(0, -2),
               ),
