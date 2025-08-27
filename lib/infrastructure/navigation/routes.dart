@@ -8,4 +8,5 @@ class Routes {
   static const LANDING = '/landing';
   static const LOGIN = '/login';
   static const PROFILE = '/profile';
+  static const POST_DETAIL = '/post-detail';
 }

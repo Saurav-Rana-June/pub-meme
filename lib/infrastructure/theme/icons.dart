@@ -5,3 +5,7 @@ String plus = '\u{2b}';
 String user = '\u{f007}';
 String share_nodes = '\u{f1e0}';
 String circle_ellipsis_vertical = '\u{e10b}';
+String heart = '\u{f004}';
+String comment = '\u{f075}';
+String user_plus = '\u{f234}';
+String chevron_left = '\u{f053}';

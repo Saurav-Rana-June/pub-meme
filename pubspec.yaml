@@ -66,6 +66,7 @@ flutter:
     - assets/images/
     - assets/logo/
     - assets/fonts/
+    - assets/gifs/
 
   fonts:
     - family: FontAwesomeSolid

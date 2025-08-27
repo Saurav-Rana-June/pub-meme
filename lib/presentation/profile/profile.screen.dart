@@ -97,7 +97,6 @@ class ProfileScreen extends GetView<ProfileController> {
       padding: EdgeInsets.only(
         right: Spacing.s16.value,
         left: Spacing.s16.value,
-        top: Spacing.s20.value,
       ),
       sliver: SliverMasonryGrid.count(
         crossAxisCount: 2,
@@ -119,7 +118,6 @@ class ProfileScreen extends GetView<ProfileController> {
       padding: EdgeInsets.only(
         right: Spacing.s16.value,
         left: Spacing.s16.value,
-        top: Spacing.s20.value,
       ),
       sliver: SliverMasonryGrid.count(
         crossAxisCount: 2,
@@ -167,8 +165,15 @@ class ProfileScreen extends GetView<ProfileController> {
                 controller.isCreationSelected.value = true;
               },
               child: Container(
-                padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                margin: EdgeInsets.only(left: 8, right: 8),
+                padding: EdgeInsets.only(
+                  left: Spacing.s8.value,
+                  right: Spacing.s8.value,
+                  bottom: Spacing.s8.value,
+                ),
+                margin: EdgeInsets.only(
+                  left: Spacing.s8.value,
+                  right: Spacing.s8.value,
+                ),
                 decoration: BoxDecoration(
                   border:
                       controller.isCreationSelected.value
@@ -203,8 +208,15 @@ class ProfileScreen extends GetView<ProfileController> {
                 controller.isCreationSelected.value = false;
               },
               child: Container(
-                padding: EdgeInsets.only(left: 8, right: 8, bottom: 8),
-                margin: EdgeInsets.only(left: 8, right: 8),
+                padding: EdgeInsets.only(
+                  left: Spacing.s8.value,
+                  right: Spacing.s8.value,
+                  bottom: Spacing.s8.value,
+                ),
+                margin: EdgeInsets.only(
+                  left: Spacing.s8.value,
+                  right: Spacing.s8.value,
+                ),
                 decoration: BoxDecoration(
                   border:
                       controller.isCreationSelected.value == false

@@ -2,6 +2,8 @@ import 'package:get/get.dart';
 import 'package:pub_meme/data/models/categories.model.dart';
 
 class HomeController extends GetxController {
+  RxBool isLiked = false.obs;
+
   RxInt selectedCategoriesId = 1.obs;
 
   RxList<CategoryModel> categories =

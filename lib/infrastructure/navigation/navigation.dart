@@ -46,5 +46,10 @@ class Nav {
       page: () => const ProfileScreen(),
       binding: ProfileControllerBinding(),
     ),
+    GetPage(
+      name: Routes.POST_DETAIL,
+      page: () => const PostDetailScreen(),
+      binding: PostDetailControllerBinding(),
+    ),
   ];
 }

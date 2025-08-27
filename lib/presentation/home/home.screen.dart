@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:pub_meme/data/enums/spacing_enum.dart';
 import 'package:pub_meme/data/extensions/spacing_extension.dart';
 import 'package:pub_meme/data/models/categories.model.dart';
+import 'package:pub_meme/infrastructure/navigation/routes.dart';
 import 'package:pub_meme/infrastructure/theme/theme.dart';
 
 import 'controllers/home.controller.dart';
@@ -48,7 +49,7 @@ class HomeScreen extends GetView<HomeController> {
                 ),
               ),
             ),
-        
+
             SliverPadding(
               padding: EdgeInsets.symmetric(horizontal: 16),
               sliver: SliverMasonryGrid.count(
@@ -57,9 +58,26 @@ class HomeScreen extends GetView<HomeController> {
                 crossAxisSpacing: 12,
                 childCount: images.length,
                 itemBuilder: (context, index) {
-                  return ClipRRect(
-                    borderRadius: BorderRadius.circular(12),
-                    child: Image.asset(images[index], fit: BoxFit.cover),
+                  return GestureDetector(
+                    onLongPress: () {
+                      controller.isLiked.value = !controller.isLiked.value;
+                    },
+                    onTap: () {
+                      Get.toNamed(Routes.POST_DETAIL);
+                    },
+                    child: Stack(
+                      alignment: Alignment.bottomLeft,
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(12),
+                          child: Image.asset(images[index], fit: BoxFit.cover),
+                        ),
+                        // Image.asset(
+                        //   "assets/gifs/like.gif",
+                        //   height: 45,
+                        // ),
+                      ],
+                    ),
                   );
                 },
               ),
