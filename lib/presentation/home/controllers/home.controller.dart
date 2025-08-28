@@ -5,6 +5,7 @@ class HomeController extends GetxController {
   RxBool isLiked = false.obs;
 
   RxInt selectedCategoriesId = 1.obs;
+  RxInt selectedPostIdByLongPress = 0.obs;
 
   RxList<CategoryModel> categories =
       <CategoryModel>[
@@ -34,4 +35,6 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
   }
+
+  void longPressOnPost(int index) {}
 }

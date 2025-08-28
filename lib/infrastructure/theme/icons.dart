@@ -9,3 +9,5 @@ String heart = '\u{f004}';
 String comment = '\u{f075}';
 String user_plus = '\u{f234}';
 String chevron_left = '\u{f053}';
+String angle_right = '\u{f105}';
+String circle_check = '\u{f058}';

@@ -51,7 +51,11 @@ class HomeScreen extends GetView<HomeController> {
             ),
 
             SliverPadding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
+              padding: EdgeInsets.only(
+                left: Spacing.s16.value,
+                right: Spacing.s16.value,
+                top: Spacing.s8.value,
+              ),
               sliver: SliverMasonryGrid.count(
                 crossAxisCount: 2,
                 mainAxisSpacing: 12,
@@ -60,7 +64,7 @@ class HomeScreen extends GetView<HomeController> {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onLongPress: () {
-                      controller.isLiked.value = !controller.isLiked.value;
+                      controller.longPressOnPost;
                     },
                     onTap: () {
                       Get.toNamed(Routes.POST_DETAIL);
@@ -72,10 +76,15 @@ class HomeScreen extends GetView<HomeController> {
                           borderRadius: BorderRadius.circular(12),
                           child: Image.asset(images[index], fit: BoxFit.cover),
                         ),
-                        // Image.asset(
-                        //   "assets/gifs/like.gif",
-                        //   height: 45,
-                        // ),
+                        Obx(
+                          () =>
+                              controller.isLiked.value
+                                  ? Image.asset(
+                                    "assets/gifs/like.gif",
+                                    height: 45,
+                                  )
+                                  : SizedBox(),
+                        ),
                       ],
                     ),
                   );
@@ -114,20 +123,24 @@ class HomeScreen extends GetView<HomeController> {
                       controller.selectedCategoriesId ==
                               controller.categories[index].id
                           ? Border(
-                            bottom: BorderSide(
-                              width: 1.8,
-                              color:
-                                  Theme.of(
-                                    context,
-                                  ).textTheme.bodyMedium?.color ??
-                                  Colors.black,
-                            ),
+                            bottom: BorderSide(width: 2.5, color: primary),
                           )
                           : null,
                 ),
                 child: Text(
                   controller.categories[index].name,
-                  style: r16.copyWith(fontWeight: FontWeight.w500),
+                  style: r16.copyWith(
+                    fontWeight:
+                        controller.selectedCategoriesId ==
+                                controller.categories[index].id
+                            ? FontWeight.w600
+                            : FontWeight.w500,
+                    color:
+                        controller.selectedCategoriesId ==
+                                controller.categories[index].id
+                            ? primary
+                            : null,
+                  ),
                 ),
               ),
             ),

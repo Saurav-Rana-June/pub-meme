@@ -51,5 +51,10 @@ class Nav {
       page: () => const PostDetailScreen(),
       binding: PostDetailControllerBinding(),
     ),
+    GetPage(
+      name: Routes.CREATE,
+      page: () => const CreateScreen(),
+      binding: CreateControllerBinding(),
+    ),
   ];
 }
