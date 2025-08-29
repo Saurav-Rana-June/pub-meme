@@ -11,6 +11,7 @@ class LandingScreen extends GetView<LandingController> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LandingController());
     return Scaffold(
       body: Obx(() => controller.screens[controller.currentIndex.value]),
       bottomNavigationBar: Obx(

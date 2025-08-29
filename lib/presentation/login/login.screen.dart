@@ -13,20 +13,26 @@ class LoginScreen extends GetView<LoginController> {
   const LoginScreen({super.key});
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
     return Scaffold(
       body: SafeArea(
         child: Stack(
           alignment: Alignment.bottomCenter,
-          children: [buildBannerSection(), buildLoginForm(context)],
+          children: [
+            buildBannerSection(width, height),
+            buildLoginForm(context, width),
+          ],
         ),
       ),
     );
   }
 
-  Container buildBannerSection() {
+  Container buildBannerSection(double width, double height) {
     return Container(
-      width: Get.width,
-      height: Get.height,
+      width: width,
+      height: height,
       padding: EdgeInsets.symmetric(
         horizontal: Spacing.s8.symmetric.horizontal,
       ),
@@ -36,17 +42,17 @@ class LoginScreen extends GetView<LoginController> {
           Column(
             children: [
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 170,
                 'assets/images/meme-1.png',
               ),
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 120,
                 'assets/images/meme-2.jpg',
               ),
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 120,
                 'assets/images/meme-3.jpg',
               ),
@@ -55,12 +61,12 @@ class LoginScreen extends GetView<LoginController> {
           Column(
             children: [
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 120,
                 'assets/images/meme-4.jpg',
               ),
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 170,
                 'assets/images/meme-5.png',
               ),
@@ -69,17 +75,17 @@ class LoginScreen extends GetView<LoginController> {
           Column(
             children: [
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 120,
                 'assets/images/meme-6.jpeg',
               ),
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 120,
                 'assets/images/meme-7.jpg',
               ),
               buildBannerImageTile(
-                Get.width / 3.5,
+                width / 3.5,
                 120,
                 'assets/images/meme-8.jpg',
               ),
@@ -105,10 +111,10 @@ class LoginScreen extends GetView<LoginController> {
     );
   }
 
-  IntrinsicHeight buildLoginForm(BuildContext context) {
+  IntrinsicHeight buildLoginForm(BuildContext context, double width) {
     return IntrinsicHeight(
       child: Container(
-        width: Get.width,
+        width: width,
         padding: EdgeInsets.symmetric(
           horizontal: Spacing.s24.symmetric.horizontal,
           vertical: Spacing.s24.symmetric.vertical,
